@@ -1,0 +1,90 @@
+{% extends 'base_shop.html'%}
+{%block title%}
+Checkout
+{%endblock%}
+
+{%block content%}
+<div class="col-md-9">
+        <div class="row">
+            <div class="col-sm-6">
+                    <form action="{%url 'orders:order_create'%}" method="POST">
+                        {% csrf_token %}
+                        <div class="form-group">
+                            <label for="Nombre">Nombre:</label>
+                            {{form.first_name}}
+                        </div>
+                        <div class="form-group">
+                            <label for="Apellidos">Apellidos:</label>
+                            {{form.last_name}}
+                        </div>
+                        <div class="form-group">
+                            <label for="correo_electronico">Correo electrónico:</label>
+                            {{form.email}}
+                        </div>
+                        <div class="form-group">
+                            <label for="direccion">Dirección:</label>
+                            {{form.address}}
+                        </div>
+                        <div class="form-group">
+                            <label for="codigo_postal">Código postal:</label>
+                            {{form.postal_code}}
+                        </div>
+                        <div class="form-group">
+                            <label for="ciudad">Ciudad:</label>
+                            {{form.city}}
+                        </div>
+                        <div class="form-group">
+                               
+                            <input class="btn btn-primary" type="submit" name="submit" value="Realizar pedido">
+                        </div>
+                    </form>
+
+            </div>
+            <div class="col-sm-6">
+                            <h3>Tu pedido</h3> 
+                            <div class="table-responsive">
+                                <table class="table">
+                                    <thead>
+                                        <th>Cantidad</th>
+                                        <th>Nombre</th>
+                                        <th>Total</th>
+                                    </thead>
+                                    <tbody>
+                                         {%for item in cart%}
+                                            <tr>
+                                                <td>
+                                                    {{item.quantity}}
+                                                </td> 
+                                                <td>
+                                                    {{item.product.name}}
+                                                </td>
+                                                <td>
+                                                     {{item.total_price}}
+                                                </td>
+                                            </tr>
+                                        {%endfor%}
+                                        <tr class="info">
+                                            <td>
+                                                &nbsp;
+                                            </td>
+                                            <td >
+                                                Total:    
+                                            </td>
+                                            <td>
+                                                <strong>{{cart.get_total_price}}</strong>
+                                            </td>
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                            
+                   
+                            
+                        
+                
+                
+            </div>
+        </div>
+</div>
+{%endblock%}

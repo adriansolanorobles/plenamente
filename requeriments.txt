@@ -1,0 +1,7 @@
+click==6.7
+Django==1.10.7
+olefile==0.44
+Pillow==4.1.1
+pkg-resources==0.0.0
+psycopg2==2.7.1
+python-dotenv==0.6.4
