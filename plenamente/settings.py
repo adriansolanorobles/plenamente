@@ -126,7 +126,7 @@ CART_SESSION_ID = 'cart'
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.10/howto/static-files/
 STATIC_URL = '/static/'
-STATIC_ROOT = '/staticfiles/'
+STATIC_ROOT = '/home/ubuntu/proyecto_plenamente/plenamente/staticfiles'
 STATICFILES_DIRS = [os.path.join(os.getcwd(),'static') ]
 
 
