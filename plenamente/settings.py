@@ -122,10 +122,15 @@ USE_L10N = True
 
 USE_TZ = True
 
+
 CART_SESSION_ID = 'cart'
+
+STATIC_ROOT = 'staticfiles'
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.10/howto/static-files/
+
 STATIC_URL = '/static/'
+
 STATICFILES_DIRS = [os.path.join(os.getcwd(),'static') ]
 
 
