@@ -13,6 +13,6 @@ except:
     pass
 
 
-os.environ.setdefault("DJANGO_SETTINGS_MODULE", "Blog.settings")
+os.environ.setdefault("DJANGO_SETTINGS_MODULE", "plenamente.settings")
 
 application = get_wsgi_application()
